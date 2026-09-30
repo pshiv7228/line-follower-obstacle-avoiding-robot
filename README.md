@@ -62,6 +62,23 @@ The HC-SR04 ultrasonic sensor measures the distance between the robot and an obs
 - Speed control
 - IoT integration
 
+## 📁 Project Files
+
+| File | Description |
+|---|---|
+| `robot.ino` | Main Arduino program |
+| `PIN_CONNECTIONS.md` | Arduino, sensors, servo and motor driver connections |
+| `README.md` | Project documentation |
+
+## 🧠 Key Concepts
+
+- Sensor-based line following
+- Ultrasonic distance measurement
+- Servo-based environment scanning
+- DC motor control using L298N
+- Autonomous obstacle avoidance
+- Arduino-based embedded programming
+  
 ## 👨‍💻 Author
 
 **Shiv Patel**
