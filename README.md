@@ -1,84 +1,127 @@
 # 🤖 Line Follower & Obstacle Avoiding Robot
 
-An Arduino-based robotic project that combines **Line Following** and **Obstacle Avoidance** functionality.
+An Arduino-based autonomous robot that combines **line following** with **ultrasonic obstacle detection and avoidance**.
 
 ## 📌 Project Overview
 
-This project is designed to build an autonomous mobile robot that can:
+This project demonstrates a basic autonomous robotic system using Arduino Uno, IR sensors, an ultrasonic sensor mounted on a servo motor, and an L298N motor driver.
 
-- Follow a predefined line using IR sensors.
-- Detect obstacles using an ultrasonic sensor.
-- Automatically change direction when an obstacle is detected.
-- Control DC motors using a motor driver.
+The robot follows a predefined line and uses the ultrasonic sensor to detect obstacles. When an obstacle is detected, the servo rotates the ultrasonic sensor to scan the left and right sides. The robot then chooses a direction based on the available distance.
 
-## 🧰 Components Used
+## ✨ Features
+
+- Automatic line following
+- Ultrasonic obstacle detection
+- Servo-based left/right scanning
+- Automatic obstacle avoidance
+- DC motor control using L298N
+- Arduino-based control
+- Adjustable motor speed
+
+## 🧰 Hardware Components
 
 - Arduino Uno
-- IR Sensor Module
-- Ultrasonic Sensor (HC-SR04)
-- Motor Driver
-- DC Geared Motors
+- L298N Motor Driver
+- 2 × DC Geared Motors
+- 2 × IR Sensor Modules
+- HC-SR04 Ultrasonic Sensor
+- SG90 Servo Motor
 - Robot Chassis
 - Wheels
-- Jumper Wires
 - Battery
+- Jumper Wires
 
 ## 💻 Software & Tools
 
 - Arduino IDE
 - Arduino C/C++
 - Arduino Uno
+- Servo Library
 
-## ⚙️ Working
+## ⚙️ How It Works
 
-### Line Following
+### 1. Line Following
 
-The IR sensors detect the line on the surface and send signals to the Arduino. Based on the sensor readings, the Arduino controls the motors to keep the robot on the path.
+The two IR sensors detect the line on the surface.
 
-### Obstacle Avoidance
+The Arduino reads the sensor signals and controls the two DC motors through the L298N motor driver.
 
-The HC-SR04 ultrasonic sensor measures the distance between the robot and an obstacle. When an obstacle is detected within a certain distance, the Arduino changes the motor direction to avoid it.
+### 2. Obstacle Detection
 
-## 🚀 Features
+The HC-SR04 ultrasonic sensor measures the distance in front of the robot.
 
-- Autonomous movement
-- Line tracking
-- Obstacle detection
-- Automatic direction control
-- Arduino-based control system
+If an obstacle is detected within the defined distance, the robot stops and starts the obstacle avoidance process.
 
-## 🎯 Applications
+### 3. Servo Scanning
 
-- Robotics learning
-- Autonomous vehicles
-- Educational robotics
-- Basic automation projects
+The ultrasonic sensor is mounted on an SG90 servo motor.
 
-## 🔮 Future Improvements
+The servo scans:
 
-- Bluetooth/Wi-Fi control
-- Mobile application control
-- Better obstacle detection
-- Speed control
-- IoT integration
+- 90° → Front
+- 150° → Left
+- 30° → Right
+
+The Arduino compares the left and right distances and selects the side with more available space.
+
+### 4. Motor Control
+
+The L298N motor driver controls the two DC motors.
+
+The robot can:
+
+- Move forward
+- Move backward
+- Turn left
+- Turn right
+- Stop
 
 ## 📁 Project Files
 
 | File | Description |
 |---|---|
 | `robot.ino` | Main Arduino program |
-| `PIN_CONNECTIONS.md` | Arduino, sensors, servo and motor driver connections |
+| `PIN_CONNECTIONS.md` | Complete hardware pin connections |
 | `README.md` | Project documentation |
+
+## 🔌 Pin Connections
+
+Detailed Arduino pin connections are available in:
+
+**[PIN_CONNECTIONS.md](PIN_CONNECTIONS.md)**
 
 ## 🧠 Key Concepts
 
-- Sensor-based line following
+- Robotics
+- Embedded Systems
+- Sensor Interfacing
+- Line Following
+- Ultrasonic Distance Measurement
+- Servo Motor Control
+- DC Motor Control
+- Autonomous Navigation
+
+## 🔮 Future Improvements
+
+- Bluetooth control
+- Wi-Fi / IoT integration
+- Mobile application control
+- Better path recovery
+- Adjustable obstacle detection
+- Improved motor speed control
+- More advanced navigation algorithms
+
+## 🎓 Learning Outcomes
+
+Through this project, I learned about:
+
+- Arduino programming
+- Sensor interfacing
+- Motor driver control
+- Servo motor control
 - Ultrasonic distance measurement
-- Servo-based environment scanning
-- DC motor control using L298N
-- Autonomous obstacle avoidance
-- Arduino-based embedded programming
-  
+- Basic autonomous robotics
+
 ## 👨‍💻 Author
 
 **Shiv Patel**
@@ -88,4 +131,4 @@ ITM Vocational University
 
 ---
 
-⭐ *A practical robotics project developed for learning and experimentation.*
+⭐ *Built as a practical robotics and automation project for learning and experimentation.*
